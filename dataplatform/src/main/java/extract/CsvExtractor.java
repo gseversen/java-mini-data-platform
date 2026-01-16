@@ -26,14 +26,15 @@ public class CsvExtractor {
         reader.readLine();
 
         while ((line = reader.readLine()) != null) {
-            String[] cols = line.split(",", -1);
+            String[] cols = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
+
 
             Product product = new Product(
-                cols[1],
-                cols[3],
-                cols[4],
-                Double.parseDouble(cols[5]),
-                Integer.parseInt(cols[7]),
+                cols[1],        //name
+                cols[3],        //brand
+                cols[4],    //category
+                Double.parseDouble(cols[5]),    //price
+                Integer.parseInt(cols[7]),    //stock    
                 cols[11]
             );
             products.add(product);
