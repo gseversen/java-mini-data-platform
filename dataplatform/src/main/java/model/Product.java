@@ -2,6 +2,7 @@ package model;
 
 public class Product {
 
+    //attributes of product
     private String name;
     private String brand;
     private String category;
@@ -41,4 +42,4 @@ public class Product {
         return availability;
     }
 
-}
+}// class end
