@@ -11,7 +11,7 @@ public class Main {
         List<Product> products = CsvExtractor.extract("data.csv");
         System.out.println("Total products extracted: " + products.size());
 
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < 10; i++) {
             Product p = products.get(i);
             System.out.println(p.getName() + " | " + p.getBrand() + " | " + p.getPrice());
         }
