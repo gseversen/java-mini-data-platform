@@ -42,4 +42,9 @@ public class Product {
         return availability;
     }
 
+    public String toString()
+    {
+        return this.getName() + " | " + this.getBrand() + " | " + this.getPrice();
+    }
+
 }// class end

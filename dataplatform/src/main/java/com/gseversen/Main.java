@@ -13,7 +13,7 @@ public class Main {
 
         for(int i = 0; i < 10; i++) {
             Product p = products.get(i);
-            System.out.println(p.getName() + " | " + p.getBrand() + " | " + p.getPrice());
+            System.out.println(p.toString());
         }
     }
 }
