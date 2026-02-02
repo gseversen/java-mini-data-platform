@@ -7,7 +7,7 @@ import model.Product;
 
 public class ProductStore {
     
-    private List<Product> products;
+    private final List<Product> products;
 
     public ProductStore() {
         this.products = new ArrayList<>();

@@ -3,12 +3,12 @@ package model;
 public class Product {
 
     //attributes of product
-    private String name;
-    private String brand;
-    private String category;
-    private double price;
-    private int stock;
-    private String availability;
+    private final String name;
+    private final String brand;
+    private final String category;
+    private final double price;
+    private final int stock;
+    private final String availability;
 
     public Product(String name, String brand, String category, double price, int stock, String availability) {
         this.name = name;
@@ -42,6 +42,7 @@ public class Product {
         return availability;
     }
 
+    @Override
     public String toString()
     {
         return this.getName() + " | " + this.getBrand() + " | " + this.getPrice();
