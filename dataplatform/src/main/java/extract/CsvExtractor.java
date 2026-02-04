@@ -3,16 +3,13 @@ package extract;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.Product;
+import store.ProductStore;
 
 public class CsvExtractor {
 
-    public static List<Product> extract(String resourceName) throws Exception {
-
-        List<Product> products = new ArrayList<>();
+    public static void extract(String resourceName, ProductStore store) throws Exception {
         
         InputStream is = CsvExtractor.class.getClassLoader().getResourceAsStream(resourceName);
 
@@ -37,9 +34,7 @@ public class CsvExtractor {
                 Integer.parseInt(cols[7]),    //stock    
                 cols[11]
             );
-            products.add(product);
+            store.add(product);
         }
-
-        return products;
     }
 }

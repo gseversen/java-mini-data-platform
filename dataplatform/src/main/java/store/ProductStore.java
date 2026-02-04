@@ -22,7 +22,7 @@ public class ProductStore {
     }
 
     public List<Product> getAll() {
-        return products;
+        return List.copyOf(products);
     }
 
 }//end of ProductStore

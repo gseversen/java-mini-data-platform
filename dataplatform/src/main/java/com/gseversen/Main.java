@@ -1,19 +1,25 @@
 package com.gseversen;
 
-import java.util.List;
-
 import extract.CsvExtractor;
 import model.Product;
+import store.ProductStore;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        List<Product> products = CsvExtractor.extract("data.csv");
-        System.out.println("Total products extracted: " + products.size());
+        ProductStore store = new ProductStore();
 
-        for(int i = 0; i < 10; i++) {
-            Product p = products.get(i);
-            System.out.println(p.toString());
+        CsvExtractor.extract("data.csv", store);
+
+        System.out.println("Total products extracted: " + store.size());
+
+        int count = 0;
+        for (Product p : store.getAll()) {
+            if (count++ == 10) break;
+            System.out.println(
+                p.getName() + " | " + p.getBrand() + " | $" + p.getPrice()
+            );
         }
+       
     }
 }
