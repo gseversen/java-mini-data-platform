@@ -1,5 +1,7 @@
 package com.gseversen;
 
+import java.util.List;
+
 import extract.CsvExtractor;
 import model.Product;
 import store.ProductStore;
@@ -20,6 +22,15 @@ public class Main {
                 p.getName() + " | " + p.getBrand() + " | $" + p.getPrice()
             );
         }
+
+        List<Product> jacksonProducts = store.findByBrand("Jackson Group");
+        System.out.println("Jackson Group products found: " + jacksonProducts.size());
+
+        for (int i = 0; i < Math.min(5, jacksonProducts.size()); i++) {
+            Product p = jacksonProducts.get(i);
+            System.out.println(p.getName() + " | $" + p.getPrice());
+        }
+        
        
     }
 }
