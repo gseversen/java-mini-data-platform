@@ -25,4 +25,15 @@ public class ProductStore {
         return List.copyOf(products);
     }
 
+    public List<Product> findByBrand(String brand) {
+       List<Product> result = new ArrayList<>();
+       
+        for(Product p : products) {
+            if(p.getBrand().equalsIgnoreCase(brand)) {
+                result.add(p);
+            }
+        }
+        return result;
+    }
+
 }//end of ProductStore
